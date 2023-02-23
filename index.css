@@ -1,3 +1,78 @@
-body {
+/* Simple Reset */
+
+*,
+*::after,
+*::before {
     margin: 0;
-} 
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Smythe', cursive;;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: 3.9rem;
+}
+
+h3 {
+    font-size: 2.2rem;
+}
+
+header {
+    height: 12em;
+    background-image: url("/Images/bg_img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    letter-spacing: 0.2em;
+    padding: 2.875em;
+}
+
+.menu-container {
+    margin: 4.19em 2.88em 2.88em 2.88em;
+}
+
+.hidden {
+    display: none;
+}
