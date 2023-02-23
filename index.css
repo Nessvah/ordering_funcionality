@@ -73,6 +73,21 @@ header {
     margin: 4.19em 2.88em 2.88em 2.88em;
 }
 
+.btn--add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border: #DEDEDE;
+    border-radius: 50%;
+}
+
+.icon {
+    height: auto;
+    width: 27px;
+
+}
 .hidden {
     display: none;
 }
