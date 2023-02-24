@@ -118,9 +118,6 @@ header {
   border: 1.5px solid #dedede;
   border-radius: 50%;
   cursor: pointer;
-}
-
-.plus {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 200;
   color: #3c3c3c;
