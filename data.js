@@ -5,6 +5,7 @@ const menuArray = [
     id: 0,
     price: 14,
     img: `🍕`,
+    quantity: 0,
   },
   {
     name: "Hamburger",
@@ -12,6 +13,7 @@ const menuArray = [
     price: 12,
     img: "🍔",
     id: 1,
+    quantity: 0,
   },
   {
     name: "Beer",
@@ -19,6 +21,7 @@ const menuArray = [
     price: 12,
     img: "🍺",
     id: 2,
+    quantity: 0,
   },
 ];
 

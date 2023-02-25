@@ -5,48 +5,24 @@ import menuData from "./data";
 // EVENT LISTENERS //
 ////////////////////
 document.addEventListener("click", function (e) {
-  let orderInfo = [];
-  if (e.target.dataset.id) {
-    getOrderInfo(e.target.dataset.id);
+  if (e.target.dataset.add) {
+    handleAddClick(e.target.dataset.add);
   }
 });
 
 // FUNCTIONS //
 //////////////
-
-let orderList = [];
-// add the item to the order
-function getOrderInfo(itemId) {
-  // show the order menu when there's a click on a button to add
-  // an item
-  const orderMenu = document.getElementById("menu-order");
-  orderMenu.style.display = "block";
-  console.log(itemId);
+function handleAddClick(itemId) {
+  // Iterate over the menu data and use the id saved in itemId to identify  the item obj
+  // filter only returns true values
   menuData.forEach(function (item) {
-    if (itemId == item.id) {
-      orderList.push(item);
+    if (item.id == itemId) {
+      item.quantity++;
+      renderOrder();
     }
-    return orderList;
   });
-
-  //getOrderHtml(orderList);
-  getOrderHtml(orderList);
 }
 
-function getOrderHtml(orderList) {
-  let orderHtml = ``;
-
-  orderList.forEach(function (order) {
-    orderHtml += `
-        <div class="order-menu">
-          <div class="order">
-            <h3>Hello/h3>
-          </div>
-        </div>
-    `;
-  });
-  return orderHtml;
-}
 // go through the menu array and get the html boilerplate to render later
 function getMenuHtml() {
   let menuHtml = ``;
@@ -65,22 +41,50 @@ function getMenuHtml() {
                    </div>
                   </div>
                    <div class="item__add" id="${item.id}">
-                    <button id="add_item" class="btn--add" data-id="${item.id}">+</button>
+                    <button id="add_item" class="btn--add" data-add="${item.id}">+</button>
                     </div>
                 </div>
-
-
         `;
   });
   return menuHtml;
 }
 
-// Render the boilerplate
-function render() {
-  document.getElementById("menu").innerHTML = getMenuHtml();
+// render order conditionally
+function getOrderHtml() {
+  let orderHtml = "";
+
+  let menuOrder = menuData.filter(function (item) {
+    return item.quantity > 0;
+  });
+
+  menuOrder.forEach(function (item) {
+    orderHtml += `
+            <div class="order--container">
+
+               <div class="order--info" id="${item.id}">
+                    <h2 id="ordered--item" class="item-name">${item.name} x${
+      item.quantity
+    }</h2>
+                    <button class="btn btn--remove" data-remove="${
+                      item.id
+                    }">Remove</button>
+                </div>
+                <h3 class="order--price">${item.price * item.quantity}€</h3>
+              </div>
+            `;
+  });
+
+  return orderHtml;
 }
 
 function renderOrder() {
+  document.getElementById("menu-order").style.display = "block";
   document.getElementById("render-order").innerHTML = getOrderHtml();
 }
-render();
+
+// Render the boilerplate
+function renderMenu() {
+  document.getElementById("menu").innerHTML = getMenuHtml();
+}
+
+renderMenu();

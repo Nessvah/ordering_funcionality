@@ -129,6 +129,42 @@ header {
   height: auto;
   width: 27px;
 }
+
+.menu-order {
+  max-width: 50rem;
+  margin: 4rem auto;
+}
+
+.render--order {
+  margin: 2rem 0;
+  border-bottom: 2px solid #393333;
+}
+
+.order--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.order--info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.btn--remove {
+  border: none;
+  background-color: transparent;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #bbbbbb;
+}
+
 .hidden {
   display: none;
+}
+
+.center-t {
+  text-align: center;
 }
