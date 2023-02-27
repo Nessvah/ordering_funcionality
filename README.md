@@ -20,3 +20,15 @@ $ npm start
 
 - [ ] Offer a "meal deal" discount
 - [ ] Allow users to rate their experience 
+
+## What I need
+
+- 4 event listeners : 
+  - [ ] add item
+  - [ ] remove item
+  - [ ] confirm order
+  - [ ] pay order
+
+- [ ]  1 function to render the menu
+- [ ] 1 function to render the order 
+- 

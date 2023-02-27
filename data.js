@@ -18,7 +18,7 @@ const menuArray = [
   {
     name: "Beer",
     ingredients: ["grain, hops, yeast, water"],
-    price: 12,
+    price: 8,
     img: "🍺",
     id: 2,
     quantity: 0,
