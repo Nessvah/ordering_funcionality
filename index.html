@@ -31,8 +31,40 @@
         <div id="render-order-payment"></div>
       </section>
 
-      <div class="modal hidden">
-        <p>Modal info</p>
+      <div class="modal">
+        <div class="modal-container">
+          <h2>Enter your card details</h2>
+          <form>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              name="name"
+              minlength="2"
+              required
+              oninvalid="this.setCustomValidity('Your name needs to be at least 2 characters long')"
+              oninput="setCustomValidity('')"
+            />
+            <input
+              type="text"
+              placeholder="Enter card number"
+              minlength="15"
+              maxlength="19"
+              oninvalid="this.setCustomValidity('Invalid CC number. It needs at least 15 digits.')"
+              oninput="setCustomValidity('')"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Enter CCV"
+              minlength="3"
+              maxlength="4"
+              oninvalid="this.setCustomValidity('The CCV is at least 3-4 numbers long')"
+              oninput="setCustomValidity('')"
+              required
+            />
+            <button class="btn--green" type="submit">Pay</button>
+          </form>
+        </div>
       </div>
     </main>
 
