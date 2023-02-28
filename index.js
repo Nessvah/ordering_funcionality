@@ -2,6 +2,8 @@ import menuData from "./data";
 
 // grab elements
 const orderContainer = document.getElementById("menu-order");
+const modal = document.getElementById("modal");
+const confirmOrder = document.getElementById("order-confirmation");
 
 // EVENT LISTENERS //
 ////////////////////
@@ -10,11 +12,44 @@ document.addEventListener("click", function (e) {
     handleAddClick(e.target.dataset.add);
   } else if (e.target.dataset.remove) {
     handleRemoveClick(e.target.dataset.remove);
+  } else if (e.target.id === "btn-confirm") {
+    modal.classList.remove("hidden");
+  } else if (e.target.id === "btn-pay") {
+    let is_valid = validateFormFields();
+    if (is_valid) {
+      renderFinalMenu();
+      e.preventDefault();
+      modal.classList.add("hidden");
+      orderContainer.style.display = "none";
+      confirmOrder.classList.remove("hidden");
+    }
   }
 });
 
 // FUNCTIONS //
 //////////////
+
+// function trim(str) {
+//   return str.replace(/^\s+|\s+$/g, "");
+// }
+
+function validateFormFields() {
+  let name = document.getElementById("name");
+  let cardNumber = document.getElementById("card-number");
+  let ccv = document.getElementById("ccv");
+
+  if (name.value == "") {
+    console.log(name);
+    return false;
+  } else if (cardNumber.value == "") {
+    return false;
+  } else if (ccv.value == "") {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function handleAddClick(itemId) {
   // Iterate over the menu data and use the id saved in itemId to identify  the item obj
   // filter only returns true values
@@ -35,8 +70,6 @@ function handleRemoveClick(itemId) {
         renderOrder();
       }
     }
-
-    // if theres not items we need to hide the window
   });
 }
 
@@ -100,9 +133,10 @@ function getOrderHtml() {
       <div><h3>$${totalAmount}</h3></div>
     </div>
 
-    <button class="btn btn--green">Complete order</button>
+    <button class="btn btn--green" id="btn-confirm">Complete order</button>
   </div>
   `;
+
   return orderHtml;
 }
 

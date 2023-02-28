@@ -28,13 +28,12 @@
       <section class="menu-order hidden" id="menu-order">
         <h2 class="center-t">Your order</h2>
         <div id="render-order" class="render--order"></div>
-        <div id="render-order-payment"></div>
       </section>
 
-      <div class="modal">
+      <div class="modal hidden" id="modal">
         <div class="modal-container">
-          <h2>Enter your card details</h2>
-          <form>
+          <h2 class="center-t">Enter your card details</h2>
+          <form id="form">
             <input
               type="text"
               placeholder="Enter your name"
@@ -46,6 +45,7 @@
             />
             <input
               type="text"
+              name="cardNumber"
               placeholder="Enter card number"
               minlength="15"
               maxlength="19"
@@ -55,6 +55,7 @@
             />
             <input
               type="text"
+              name="ccv"
               placeholder="Enter CCV"
               minlength="3"
               maxlength="4"
@@ -62,8 +63,13 @@
               oninput="setCustomValidity('')"
               required
             />
-            <button class="btn--green" type="submit">Pay</button>
+            <button class="btn--green" id="btn-pay">Pay</button>
           </form>
+        </div>
+      </div>
+      <div class="order--confirmation hidden" id="order-confirmation">
+        <div class="order--inner">
+          <h2>Thanks! Your ordering is on it's way!</h2>
         </div>
       </div>
     </main>

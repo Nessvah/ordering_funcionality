@@ -34,13 +34,6 @@ svg {
   max-width: 100%;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
 h1,
 h2,
 h3,
@@ -74,6 +67,10 @@ header {
   background-size: cover;
   color: #fff;
   padding: 2.875em;
+}
+
+main {
+  position: relative;
 }
 
 .menu-container {
@@ -181,6 +178,51 @@ header {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  margin-top: 2.5em;
+}
+
+.modal {
+  width: 52.4rem;
+  min-height: 52.4rem;
+  background-color: #fff;
+  position: fixed;
+  left: 45%;
+  top: 35%;
+  margin-left: -150px;
+  margin-top: -150px;
+  border-radius: 3.9px;
+  z-index: 15;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.modal-container {
+  margin: 4.7rem 2.4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.875em;
+}
+
+input[type="text"] {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  padding: 0.8em;
+  margin-top: 1.4em;
+}
+
+.order--confirmation {
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 3px;
+  background-color: #ecfdf5;
+  color: #065f46;
+  text-align: center;
+}
+
+.order--inner {
+  padding: 3.187em;
 }
 .hidden {
   display: none;
