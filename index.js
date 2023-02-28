@@ -3,7 +3,7 @@ import menuData from "./data";
 // grab elements
 const orderContainer = document.getElementById("menu-order");
 const modal = document.getElementById("modal");
-const confirmOrder = document.getElementById("order-confirmation");
+const confirmOrder = document.getElementById("confirmation");
 
 // EVENT LISTENERS //
 ////////////////////
@@ -15,14 +15,10 @@ document.addEventListener("click", function (e) {
   } else if (e.target.id === "btn-confirm") {
     modal.classList.remove("hidden");
   } else if (e.target.id === "btn-pay") {
-    let is_valid = validateFormFields();
-    if (is_valid) {
-      renderFinalMenu();
-      e.preventDefault();
-      modal.classList.add("hidden");
-      orderContainer.style.display = "none";
-      confirmOrder.classList.remove("hidden");
-    }
+    modal.classList.add("hidden");
+    orderContainer.style.display = "none";
+    e.preventDefault();
+    confirmOrder.classList.remove("hidden");
   }
 });
 
@@ -39,7 +35,6 @@ function validateFormFields() {
   let ccv = document.getElementById("ccv");
 
   if (name.value == "") {
-    console.log(name);
     return false;
   } else if (cardNumber.value == "") {
     return false;
@@ -51,6 +46,7 @@ function validateFormFields() {
 }
 
 function handleAddClick(itemId) {
+  confirmOrder.classList.add("hidden");
   // Iterate over the menu data and use the id saved in itemId to identify  the item obj
   // filter only returns true values
   menuData.forEach(function (item) {
@@ -87,7 +83,7 @@ function getMenuHtml() {
                     <div>
                         <h2>${item.name}</h2>
                         <p><span class="item__ingredients">${item.ingredients}</span> </p>
-                        <h4>$ ${item.price}</h4>
+                        <h3>$${item.price}</h3>
                    </div>
                   </div>
                    <div class="item__add" id="${item.id}">
@@ -114,14 +110,14 @@ function getOrderHtml() {
             <div class="order--container">
 
                <div class="order--info" id="${item.id}">
-                    <h2 id="ordered--item" class="item-name">${item.name} x${
+                    <h3 id="ordered--item" class="item-name">${item.name} x${
       item.quantity
-    }</h2>
+    }</h3>
                     <button class="btn btn--remove" id="remove-item" data-remove="${
                       item.id
                     }">Remove</button>
                 </div>
-                <h3 class="order--price">${item.price * item.quantity}$</h3>
+                <h3 class="order--price">$${item.price * item.quantity}</h3>
               </div>
             `;
   });
@@ -129,7 +125,7 @@ function getOrderHtml() {
   orderHtml += `
   <div class="confirm--container">
     <div class="order--details">
-      <div><h2>Total price:</h2></div>
+      <div><h3>Total price:</h3></div>
       <div><h3>$${totalAmount}</h3></div>
     </div>
 

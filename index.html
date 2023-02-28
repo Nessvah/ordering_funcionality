@@ -1,5 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
@@ -11,7 +15,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <title>Restaurant Order</title>
   </head>
+
   <body>
     <header>
       <h1>Jimmy's Dinner</h1>
@@ -26,7 +32,7 @@
       </section>
 
       <section class="menu-order hidden" id="menu-order">
-        <h2 class="center-t">Your order</h2>
+        <h2 class="center-t mb-1">Your order</h2>
         <div id="render-order" class="render--order"></div>
       </section>
 
@@ -63,18 +69,24 @@
               oninput="setCustomValidity('')"
               required
             />
-            <button class="btn--green" id="btn-pay">Pay</button>
+            <button class="btn--green" id="btn-pay" type="submit">Pay</button>
           </form>
         </div>
       </div>
-      <div class="order--confirmation hidden" id="order-confirmation">
+      <div class="order--confirmation hidden" id="confirmation">
         <div class="order--inner">
           <h2>Thanks! Your ordering is on it's way!</h2>
         </div>
       </div>
     </main>
 
-    <footer></footer>
+    <footer>
+      <div class="footer-container">
+        <p>
+          2023 Built by <a href="https://github.com/Nessvah">Sílvia Vanessa</a>
+        </p>
+      </div>
+    </footer>
 
     <script src="index.js" type="module"></script>
   </body>

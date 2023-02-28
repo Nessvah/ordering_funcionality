@@ -17,6 +17,9 @@ body {
   font-family: "Smythe", cursive;
   font-size: 1.6rem;
   line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -49,7 +52,7 @@ h1 {
   font-size: 3.9rem;
 }
 h2 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
 }
 
 h3 {
@@ -65,16 +68,33 @@ header {
   background-image: url("/Images/bg_img.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   color: #fff;
-  padding: 2.875em;
+  padding: 2em;
 }
 
 main {
   position: relative;
 }
 
+footer {
+  background-color: #422e28;
+  color: #fff;
+  margin-top: auto;
+  height: 5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: #fff;
+}
+
 .menu-container {
-  margin: 4.19em 2.88em 2.88em 2.88em;
+  margin: 1em;
   max-width: 80rem;
 }
 
@@ -97,7 +117,7 @@ main {
 }
 
 .menu--emoji {
-  font-size: 6em;
+  font-size: 3em;
 }
 
 .item__ingredients {
@@ -127,12 +147,8 @@ main {
 }
 
 .menu-order {
-  max-width: 50rem;
+  max-width: 90%;
   margin: 4rem auto;
-}
-
-.render--order {
-  margin: 2rem 0;
 }
 
 .order--container {
@@ -182,11 +198,11 @@ main {
 }
 
 .modal {
-  width: 52.4rem;
+  width: 90%;
   min-height: 52.4rem;
   background-color: #fff;
   position: fixed;
-  left: 45%;
+  left: 170px;
   top: 35%;
   margin-left: -150px;
   margin-top: -150px;
@@ -196,7 +212,7 @@ main {
 }
 
 .modal-container {
-  margin: 4.7rem 2.4rem;
+  margin: 1em;
 }
 
 form {
@@ -213,7 +229,7 @@ input[type="text"] {
 }
 
 .order--confirmation {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 3px;
   background-color: #ecfdf5;
@@ -224,10 +240,74 @@ input[type="text"] {
 .order--inner {
   padding: 3.187em;
 }
+
+.footer-container {
+  text-align: center;
+  padding: 2rem auto;
+}
+
 .hidden {
   display: none;
 }
 
 .center-t {
   text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+  .modal {
+    width: 80%;
+    left: 240px;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+}
+
+/* LARGER SCREENS */
+@media (min-width: 769px) {
+  .menu-container {
+    margin: 1em auto;
+    min-width: 140rem;
+  }
+
+  .menu {
+    padding: 0 4em;
+    gap: 2em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu--item {
+    gap: 2em;
+    width: 40em;
+    justify-content: center;
+  }
+
+  .menu-order {
+    margin-top: 4em;
+    max-width: 50%;
+  }
+
+  .modal {
+    max-width: 40%;
+    left: 40%;
+  }
+
+  .order--confirmation {
+    max-width: 40%;
+    margin-top: 4rem;
+  }
 }
