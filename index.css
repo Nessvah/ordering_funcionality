@@ -263,8 +263,8 @@ input[type="text"] {
 /* Tablet */
 @media (min-width: 426px) and (max-width: 768px) {
   .modal {
-    width: 80%;
-    left: 240px;
+    width: 40rem;
+    left: 40%;
   }
 
   h2 {
@@ -302,8 +302,8 @@ input[type="text"] {
   }
 
   .modal {
-    max-width: 40%;
-    left: 40%;
+    width: 50rem;
+    left: 45%;
   }
 
   .order--confirmation {
