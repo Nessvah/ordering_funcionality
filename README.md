@@ -61,11 +61,12 @@ Figma Design was provided to practice following design specs.
 - [ ] Allow users to rate their experience
 
 ### Optimizations/Problems to solve (optional):
-- [ ] The form doesn't work as expected. Altough it has required attr, the event listener overlaps and the user is able to "submit" form with empty fields. 
+- [ ] The form doesn't work as expected. Although it has required attr, the event listener overlaps, and the user can "submit" the form with empty fields.
 
 ## Built With
 
 HTML, CSS
+
 JavaScript
 
 ## Getting Started
