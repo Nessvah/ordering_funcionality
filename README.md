@@ -4,6 +4,10 @@
 
 This is a solo project to practice some essential javascript concepts. The design spec was provided by Scrimba.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d939b58a-8e77-48eb-b3ed-e0d5bfeb6295/deploy-status)](https://app.netlify.com/sites/ordering-func/deploys)
+
+Live preview [Click Here](https://ordering-func.netlify.app/).
+
 ## Screenshots
 
 ![Web](Images/web.png)
